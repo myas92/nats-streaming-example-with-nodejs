@@ -10,12 +10,21 @@ npm i ts-node-dev
 ```
 
 ## Important terminologies
-1- **getData()**
+1- **Message**
+```
+import NATS, { Message } from 'node-nats-streaming'
+...
+...
+...
 
-2- **getSequence()**
+subscription.on('message', (msg: Message) => {})
 
-3- **Message**
+ ```
+2- **getData()**
+
+3- **getSequence()**
 
 4- **Queue Grouping**
 ```
- subscription.on('message', (msg: Message) => {})
+subscription.on('message', (msg: Message, 'service-queue-group') => {})
+```
