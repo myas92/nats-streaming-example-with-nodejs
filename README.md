@@ -28,3 +28,10 @@ subscription.on('message', (msg: Message) => {})
 ```
 subscription.on('message', (msg: Message, 'service-queue-group') => {})
 ```
+
+## Monitoring
+1- Open 8222 port
+
+2- http://localhost:8222/streaming
+
+3- http://localhost:8222/streaming/channelsz?subs=1

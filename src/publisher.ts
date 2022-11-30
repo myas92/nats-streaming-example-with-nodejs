@@ -9,9 +9,7 @@ stan.on('connect', () => {
     console.log('Publisher connected to NATS');
 
     const data = JSON.stringify({
-        id: '12312',
-        title:"nat title",
-        price: 10,
+        id: '0',
     })
     stan.publish('ticket:created', data, () => {
         console.log('Event Published');
