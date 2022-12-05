@@ -10,6 +10,7 @@ stan.on('connect', () => {
 
     const data = JSON.stringify({
         id: '0',
+        msg: 'hi'
     })
     stan.publish('ticket:created', data, () => {
         console.log('Event Published');
