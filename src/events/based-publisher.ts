@@ -1,0 +1,25 @@
+import { Subjects } from './subjects';
+import { Message, Stan } from "node-nats-streaming";
+
+
+interface Event {
+    subject: Subjects,
+    data: any
+}
+export abstract class Publisher<T extends Event> {
+    abstract subject: T['subject'];
+    private client: Stan;
+
+    constructor(client: Stan) {
+        this.client = client;
+    }
+
+
+
+    publish(data: T['data']) {
+        this.client.publish(this.subject, data, () => {
+            console.log('Event published.')
+        })
+
+    }
+}
